@@ -36,4 +36,13 @@ class Api::RecipesController < ApplicationController
     )
     render 'show.json.jbuilder'
   end
+
+  def destroy
+    # find it
+    the_id = params[:id]
+    @recipe = Recipe.find_by(id: the_id)
+    # destroy it
+    @recipe.destroy
+    render 'show.json.jbuilder'
+  end
 end
