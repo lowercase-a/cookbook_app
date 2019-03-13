@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+recipes = Recipe.all
+
+recipes.each do |recipe|
+  id_from_user = User.all.sample.id
+  recipe.update!(user_id: id_from_user)
+end
