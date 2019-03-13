@@ -7,10 +7,11 @@ class Api::RecipesController < ApplicationController
       @recipes = Recipe.all
     end
 
+    @recipes = @recipes.where('ingredients LIKE ?', "%something%")
+
     the_order = params[:order]
     @recipes = @recipes.order(:prep_time => the_order)
-    @recipes.order!(:prep_time => the_order)
-
+    # @recipes.order!(:prep_time => the_order)
     render 'index.json.jbuilder'
   end
 
