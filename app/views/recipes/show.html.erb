@@ -10,3 +10,12 @@
 <p>prep_time: <%= @recipe.prep_time %></p>
 <img src="<%= @recipe.image_url %>">
 <p>chef: <%= @recipe.chef %></p>
+
+<!--
+<form action="/recipes/<%= @recipe.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Recipe">
+</form> -->
+
+
+<a href="/recipes/<%= @recipe.id %>" data-method="delete" rel="nofollow">Delete the item</a>
